@@ -1,25 +1,25 @@
-import { Route, Router, Routes } from "react-router-dom";
-import './App.css'
-import AuthLayout from "./components/auth/Layout";
-import AuthLogin from "./pages/auth/Login";
-import AuthRegister from "./pages/auth/Register";
+import { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import './App.css'
+import { Route, Router, Routes } from 'react-router-dom'
+import AuthLayout from './components/auth/Layout'
+import AuthLogin from './pages/auth/Login';
+import AuthRegister from './pages/auth/Register';
 
 function App() {
+  const [count, setCount] = useState(0)
 
   return (
-    
-      <div className='flexflex-col overflow-hidden bg-white'>
-      <h1>Header component</h1>
-
+    <>
     <Routes>
-      <Route path="/" element={<AuthLayout/>}>
-        <Route path="login" element={<AuthLogin/>}/>
-        <Route path="register" element={<AuthRegister/>}/>
+      <Route path='/auth' element={<AuthLayout/>}>
+        <Route path='login' element={<AuthLogin/>}/>
+        <Route path='register' element={<AuthRegister/>}/>
       </Route>
     </Routes>
-    </div>
-    
+    </>
   )
 }
 
+export default App
 export default App
